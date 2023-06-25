@@ -10,7 +10,7 @@ const Blog = () => {
         <h2 className="sr-only">Blog</h2>
 
         {posts.map((post) => (
-          <PostPreview post={post} />
+          <PostPreview post={post} key={post.date} />
         ))}
       </main>
     </div>
