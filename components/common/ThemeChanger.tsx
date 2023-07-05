@@ -19,6 +19,7 @@ const ThemeChanger = () => {
   return (
     <button
       type="button"
+      aria-label="theme toggle button"
       className="flex items-center justify-center h-8 w-8 hover:bg-neutral-100 hover:dark:bg-dark-100 rounded-full transition-colors duration-200"
       onClick={() =>
         currentTheme == "dark" ? setTheme("light") : setTheme("dark")
