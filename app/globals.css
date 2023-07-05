@@ -6,12 +6,17 @@
   *,
   *::before,
   *::after {
-    @apply text-neutral-800;
+    @apply text-neutral-800 dark:text-neutral-50;
   }
-}
 
-html,
-body,
-#root {
-  height: 100%;
+  body {
+    @apply bg-white dark:bg-dark-600;
+    @apply transition-colors duration-200;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
 }

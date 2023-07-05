@@ -8,7 +8,7 @@ type Items = {
 
 const PostPreview = ({ post }: { post: Items }) => {
   return (
-    <div className="group w-full border-b border-neutral-200">
+    <div className="group w-full border-b border-neutral-200 dark:border-dark-100">
       <Link href={`/blog/${post.slug}`} className="inline-block w-full py-10">
         {post?.thumbnail && (
           <Image
@@ -23,7 +23,9 @@ const PostPreview = ({ post }: { post: Items }) => {
         <h3 className="font-semibold text-2xl group-hover:underline">
           {post.title}
         </h3>
-        <p className="mt-4 mb-3.5">{post.excerpt}</p>
+        <p className="mt-4 mb-2 md:mb-3.5 dark:text-neutral-300">
+          {post.excerpt}
+        </p>
         <DateFormatter dateString={post.date} />
       </Link>
     </div>

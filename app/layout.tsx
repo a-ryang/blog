@@ -1,5 +1,7 @@
 import "./globals.css";
 import { Metadata } from "next";
+
+import Providers from "./providers";
 import Header from "@/components/common/Header";
 
 export const metadata: Metadata = {
@@ -27,10 +29,12 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );

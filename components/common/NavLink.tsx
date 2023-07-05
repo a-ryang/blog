@@ -17,7 +17,7 @@ const NavLink = ({ href, children }: StrictPropsWithChildren<Props>) => {
       className={
         isActive
           ? "border-b-2 border-gray-600"
-          : "text-neutral-600 transition-colors"
+          : "text-neutral-600 dark:text-dark-100 transition-colors"
       }
     >
       {children}
