@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/api";
 import PostPreview from "@/components/post/PostPreview";
 
 const Blog = () => {
-  const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
+  const posts = getAllPosts(["title", "date", "excerpt", "thumbnail", "slug"]);
 
   return (
     <div className="container mx-auto px-4 xl:px-0 max-w-6xl ">
