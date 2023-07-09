@@ -32,45 +32,13 @@ const Home = () => {
             contribute
             <div className="mt-4 border-b-4 border-primary-600 content-none"></div>
           </h1>
-          <article className="py-4">
-            <h1 className="text-xl font-semibold">Nodejs</h1>
-            <p className="pt-s text-lg">
-              문서 최신화
-              <span className="text-gray-600 dark:text-dark-100">
-                | 2022-07-21
-              </span>
-            </p>
-            <a
-              target="_blank"
-              rel="noopener"
-              href="https://github.com/nodejs/nodejs.org/pull/4733"
-              className="text-blue-500 dark:text-blue-400 hover:underline"
-            >
-              바로가기
-            </a>
-          </article>
-          <article className="py-4">
-            <h1 className="text-xl font-semibold">Vuejs-kr</h1>
-            <p className="pt-s text-lg">
-              문서 오타 수정
-              <span className="text-gray-600 dark:text-dark-100">
-                | 2023-02-06
-              </span>
-            </p>
-            <a
-              target="_blank"
-              rel="noopener"
-              href="https://github.com/vuejs-kr/docs-next/pull/292"
-              className="text-blue-500 dark:text-blue-400 hover:underline"
-            >
-              바로가기
-            </a>
-          </article>
+
           <article className="py-4">
             <h1 className="text-xl font-semibold">MDN</h1>
             <p className="pt-s text-lg">
               문서 링크 수정
               <span className="text-gray-600 dark:text-dark-100">
+                {" "}
                 | 2023-02-13
               </span>
             </p>
@@ -83,11 +51,32 @@ const Home = () => {
               바로가기
             </a>
           </article>
+
+          <article className="py-4">
+            <h1 className="text-xl font-semibold">Vuejs-kr</h1>
+            <p className="pt-s text-lg">
+              문서 오타 수정
+              <span className="text-gray-600 dark:text-dark-100">
+                {" "}
+                | 2023-02-06
+              </span>
+            </p>
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://github.com/vuejs-kr/docs-next/pull/292"
+              className="text-blue-500 dark:text-blue-400 hover:underline"
+            >
+              바로가기
+            </a>
+          </article>
+
           <article className="py-4">
             <h1 className="text-xl font-semibold">loadingio</h1>
             <p className="pt-s text-lg">
               문서 링크 수정
               <span className="text-gray-600 dark:text-dark-100">
+                {" "}
                 | 2022-12-20
               </span>
             </p>
@@ -100,11 +89,32 @@ const Home = () => {
               바로가기
             </a>
           </article>
+
+          <article className="py-4">
+            <h1 className="text-xl font-semibold">Nodejs</h1>
+            <p className="pt-s text-lg">
+              문서 최신화
+              <span className="text-gray-600 dark:text-dark-100">
+                {" "}
+                | 2022-07-21
+              </span>
+            </p>
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://github.com/nodejs/nodejs.org/pull/4733"
+              className="text-blue-500 dark:text-blue-400 hover:underline"
+            >
+              바로가기
+            </a>
+          </article>
+
           <article className="py-4">
             <h1 className="text-xl font-semibold">Nestia</h1>
             <p className="pt-s text-lg">
               문서 링크 수정
               <span className="text-gray-600 dark:text-dark-100">
+                {" "}
                 | 2022-05-24
               </span>
             </p>
