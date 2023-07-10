@@ -35,7 +35,17 @@ module.exports = {
           600: "#1a1c20",
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontWeight: 600,
+              fontSize: "2rem",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
