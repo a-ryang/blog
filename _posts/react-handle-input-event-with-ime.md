@@ -74,7 +74,7 @@ const handleTagInputEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
 ![isComposing 확인](/images/blog/react-handle-input-event-with-ime/02.gif)
 
 따라서 문자가 완성된 시점인 '`isComposing`가 true일 때' 조건문에 추가하여 해결했습니다.
-isComposing은 리액트 이벤트 객체([SyntheticEvent](https://react.dev/reference/react-dom/components/common#react-event-object))에 없기 때문에 nativeEvent을 통해 접근해야했습니다.
+`isComposing`은 리액트 이벤트 객체([SyntheticEvent](https://react.dev/reference/react-dom/components/common#react-event-object))에 없기 때문에 nativeEvent를 통해 접근해야했습니다.
 
 ```ts
 const handleTagInputEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
