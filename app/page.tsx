@@ -34,6 +34,25 @@ const Home = () => {
           </h1>
 
           <article className="py-4">
+            <h1 className="text-xl font-semibold">vuejs-translations</h1>
+            <p className="pt-s text-lg">
+              문서 링크 수정
+              <span className="text-gray-600 dark:text-dark-100">
+                {" "}
+                | 2023-07-18
+              </span>
+            </p>
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://github.com/vuejs-translations/docs-ko/pull/18"
+              className="text-blue-500 dark:text-blue-400 hover:underline"
+            >
+              바로가기
+            </a>
+          </article>
+
+          <article className="py-4">
             <h1 className="text-xl font-semibold">MDN</h1>
             <p className="pt-s text-lg">
               문서 링크 수정
@@ -122,7 +141,7 @@ const Home = () => {
               target="_blank"
               rel="noopener"
               href="https://github.com/samchon/nestia/pull/95"
-              className="text-blue-500 dark:text-blue-100 hover:underline"
+              className="text-blue-500 dark:text-blue-400 hover:underline"
             >
               바로가기
             </a>
