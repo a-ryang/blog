@@ -23,7 +23,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
           </header>
 
           <div
-            className="prose dark:prose-invert"
+            className="prose max-w-none dark:prose-invert"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </article>
