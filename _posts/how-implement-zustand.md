@@ -127,6 +127,88 @@ const 팬2 = new Observer("어피치");
 
 ### 발행-구독 패턴 Pub-Sub Pattern
 
+발행-구독 패턴은 앞에서 말했듯이 옵저버 패턴의 확장으로 볼 수 있다.
+
+발행자와 구독자(관찰자) 사이에 중개자 역할을 해주는 `메세지 브로커`(또는 이벤트 버스)가 추가된다.
+
+이 브로커 덕분에 발행자와 구독자(관찰자) 사이에 결합도를 낮출 수 있게 된다.
+
+1. 발행자 (publisher 또는 subject)
+
+- 상태를 가지고 있는 객체.
+- 구독자에게 직접 메세지를 보내지 않는다.
+- 상태가 변경될 때마다 메세지를 브로커에게 보낸다.
+
+```js
+class Publisher {
+  constructor(broker) {
+    this.broker = broker;
+  }
+
+  publish(message) {
+    this.broker.publish(message);
+  }
+}
+```
+
+2. 메세지 브로커 (message broker 또는 event channel)
+
+- 발행자와 구독자 사이에서 중개 역할을 한다.
+- 발행자의 메세지를 관찰자에게 전달하고, 관찰자의 구독 정보를 관리한다.
+
+```js
+class Broker {
+  constructor() {
+    this.subscribers = []; // 또는 this.observers
+  }
+
+  addSubscriber(subscriber) {
+    this.subscribers.push(subscriber);
+  }
+
+  publish(message) {
+    this.subscribers.forEach((subscriber) => subscriber.update(message));
+  }
+}
+```
+
+3. 구독자 (subscriber 또는 observer)
+
+- 브로커를 통해 메세지를 수신한다.
+
+```js
+class Subscriber {
+  constructor(name) {
+    this.name = name;
+  }
+
+  update(data) {
+    console.log(`${this.name}님! 새로운 '${data}' 포스트가 올라왔어요`);
+  }
+}
+```
+
+```js
+const 알림이 = new Broker();
+const 뉴진스_공식계정 = new Publisher(알림이);
+const 팬1 = new Subscriber("라이언");
+const 팬2 = new Subscriber("어피치");
+
+알림이.addSubscriber(팬1);
+알림이.addSubscriber(팬2);
+
+뉴진스_공식계정.publish("안녕 버니즈~");
+
+// 출력
+// 라이언님! 새로운 '안녕 버니즈~' 포스트가 올라왔어요
+// 어피치님! 새로운 '안녕 버니즈~' 포스트가 올라왔어요
+```
+
+발행자는 누가 구독자인지, 구독자가 어떤 메서드(인터페이스)를 가지고 있는지 알 필요가 없어졌다.
+즉, 발행자와 구독자 사이에 결합도가 낮아졌다.
+
+발행-구독 패턴까지 알아보았으니 이제 zustand를 뜯어보자.
+
 ### 참고
 
 [zustand](https://github.com/pmndrs/zustand)
