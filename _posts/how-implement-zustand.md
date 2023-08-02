@@ -3,7 +3,7 @@ title: zustand를 구현하며 상태관리 이해도 높이기
 excerpt: "내부동작 좀 알고 써라"
 thumbnail: "/images/blog/thumbnail/zustand.jpg"
 date: "2023-07-29T12:03:00.000Z"
-updatedAt: "2023-07-29"
+updatedAt: "2023-08-02"
 author: "a-ryang"
 tags: ["zustand", "상태관리", "react", "디자인패턴"]
 ---
@@ -209,9 +209,122 @@ const 팬2 = new Subscriber("어피치");
 
 발행-구독 패턴까지 알아보았으니 이제 zustand를 뜯어보자.
 
+## zustand vanilla
+
+> 코드 : https://github.com/pmndrs/zustand/blob/main/src/vanilla.ts
+
+zustand의 core 코드는 리액트 없이도 사용할 수 있다. 리액트 없이 zustand를 이용한 간단한 카운터 스토어 예시를 만들자.
+
+> [react없이 zustand 사용하기 - zustand README.md](https://github.com/pmndrs/zustand/tree/main#using-zustand-without-react)
+
+```ts
+interface CounterStore {
+  counts: number;
+  increment: () => void;
+}
+
+const store = createStore<CounterStore>((set) => ({
+  counts: 0,
+  increment: () => set((state) => ({ counts: state.counts + 1 })),
+}));
+```
+
+카운트 변수 `counts`와 이걸 증가시켜주는 함수 `increment`뿐인 단순한 코드다.
+
+이제 `createStore`의 내부부터 따라가보자.
+
+```js
+const createStore = (createState) =>
+  createState ? createStoreImpl(createState) : createStoreImpl;
+```
+
+`createStore`가 호출되면 인자로 넘어온 상태 초기화 함수`createState`를 받아 `createStoreImpl`을 호출하게 된다.
+
+> 인자 createState를 넘기지 않고 호출하면 createStoreImpl 자체를 반환한다.
+
+줄여서 다음과 같을 것이다.
+
+```js
+const createStore = (createState) => createStoreImpl(createState);
+
+// createState는 createStore를 호출할 때 전달한 다음 함수다!
+//  (set) => ({
+//    counts: 0,
+//    increment: () => set((state) => ({ counts: state.counts + 1 })),
+//  })
+```
+
+createState의 타입은 `StateCreator`인데.. 아직 내 미천한 타입스크립트 능력으로 GPT를 이용해 필요한 내용만 요약해 봤다.
+
+```ts
+type StateCreator<T> = (
+  setState: ..., // 상태를 변경하는 함수. 위에서 set으로 사용중
+  getState: ..., // 현재 상태를 반환하는 함수
+  store: ...     // 상태 관리 함수들을 포함하는 객체
+) => T
+```
+
+이제 `createStoreImpl`을 보자.
+
+```js
+const createStoreImpl = (createState) => {
+  let state; // (1)
+  const listeners = new Set(); // (2)
+
+  const setState = (partial, replace) => {
+    // (3)
+    // ...
+  };
+
+  const getState = () => state;
+
+  const subscribe = (listener) => {
+    // ...
+  };
+
+  const api = { setState, getState, subscribe, destroy }; // (4)
+  state = createState(setState, getState, api); // (5)
+  return api; //
+};
+```
+
+- `(1)` 상태와 상태 관리 함수를 갖고 있을 변수. 클로저로 관리된다.
+- `(2)` 상태 변경을 감지할 리스너들을 저장할 Set 객체. 즉, 관찰자/구독자들이다.
+- `(3)` setState, getState, subscribe는 좀 뒤에서 본다.
+- `(4)` 상태 변경, 상태 조회와 구독을 묶어둔 객체. `const store = createStore(...)`에서 store가 전달받게 된다.
+
+```ts
+const store = createStore<CounterStore>(...);
+👇
+const store = { setState, getState, subscribe, destroy };
+```
+
+> `destroy`는 deprecated 되었다.
+
+- `(5)` `createState`를 호출하여 초기 상태를 설정한다.
+
+맨 처음 전달한 상태 초기화 함수 `createStore`를 다시 보자.
+
+```js
+(set) => ({
+  counts: 0,
+  increment: () => set((state) => ({ counts: state.counts + 1 })),
+});
+```
+
+위 함수에서 반환된 객체가 변수 `let state`에 저장`(5)`된다.
+
+```js
+state = {
+  counts: 0,
+  increment: () => set((state) => ({ counts: state.counts + 1 })),
+};
+```
+
 ### 참고
 
-[zustand](https://github.com/pmndrs/zustand)
-[Observer pattern - 위키](https://en.wikipedia.org/wiki/Observer_pattern)
-[React 상태 관리 라이브러리 Zustand의 코드를 파헤쳐보자 - ui.toast.com](https://ui.toast.com/posts/ko_20210812#react-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-zustand%EC%9D%98-%EC%BD%94%EB%93%9C%EB%A5%BC-%ED%8C%8C%ED%97%A4%EC%B3%90%EB%B3%B4%EC%9E%90)
-[Build your own Zustand! - rohitpotato.hashnode.dev](https://rohitpotato.hashnode.dev/build-your-own-zustand)
+- [zustand](https://github.com/pmndrs/zustand)
+
+- [Observer pattern - 위키](https://en.wikipedia.org/wiki/Observer_pattern)
+- [React 상태 관리 라이브러리 Zustand의 코드를 파헤쳐보자 - ui.toast.com](https://ui.toast.com/posts/ko_20210812#react-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-zustand%EC%9D%98-%EC%BD%94%EB%93%9C%EB%A5%BC-%ED%8C%8C%ED%97%A4%EC%B3%90%EB%B3%B4%EC%9E%90)
+- [Build your own Zustand! - rohitpotato.hashnode.dev](https://rohitpotato.hashnode.dev/build-your-own-zustand)
