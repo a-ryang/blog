@@ -1,0 +1,24 @@
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.25rem 0;
+  color: var(--text-mute);
+  transition: color 0.13s;
+}
+
+.sidebar-item:hover {
+  color: var(--text-1rd);
+}
+
+.active {
+  color: var(--text-1rd);
+}
+
+.sidebar-item-label {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
