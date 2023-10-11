@@ -1,0 +1,28 @@
+.divider {
+  --divider-size-xs: 1px;
+  --divider-size-sm: 2px;
+  --divider-size-md: 4px;
+  --divider-size-lg: 8px;
+  --divider-size-xl: 10px;
+  background-color: var(--gray-200);
+}
+
+.divider-size-xs {
+  height: var(--divider-size-xs);
+}
+
+.divider-size-sm {
+  height: var(--divider-size-sm);
+}
+
+.divider-size-md {
+  height: var(--divider-size-md);
+}
+
+.divider-size-lg {
+  height: var(--divider-size-lg);
+}
+
+.divider-size-xl {
+  height: var(--divider-size-xl);
+}
