@@ -1,0 +1,9 @@
+node_modules/
+
+# NextJS
+**/.next/
+**/.build/
+**/.coverage/
+
+# build
+**/dist
