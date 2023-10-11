@@ -1,7 +1,11 @@
 import "@/styles/reset.css";
 import "@/styles/global.css";
+import "@/styles/utils.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+
+import Providers from "@/providers/providers";
+import { AppShell } from "@/components/app-shell";
 
 const font = localFont({ src: "./PretendardVariable.woff2" });
 
@@ -42,7 +46,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <Providers>
+          <AppShell>{children}</AppShell>
+        </Providers>
+      </body>
     </html>
   );
 }
