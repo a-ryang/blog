@@ -14,7 +14,7 @@
   --text-1rd: #222;
   --text-mute: var(--gray-700);
 
-  --bg-1rd: #f8f8f8;
+  --bg-1rd: var(--gray-50);
   --bg-2rd: var(--gray-100);
   --bg-3rd: var(--gray-900);
 }
