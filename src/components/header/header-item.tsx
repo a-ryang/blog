@@ -13,7 +13,11 @@ export interface HeaderItemProps {
 
 export function HeaderItem({ icon: Icon, label, href, isActive }: HeaderItemProps) {
   return (
-    <Link href={href} className={clsx(classes["header-item"], isActive ? classes.active : "")}>
+    <Link
+      aria-label={label}
+      href={href}
+      className={clsx(classes["header-item"], isActive ? classes.active : "")}
+    >
       <Icon size={20} weight="fill" />
     </Link>
   );

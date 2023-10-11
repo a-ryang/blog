@@ -1,0 +1,20 @@
+.name {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+}
+
+.label {
+  display: inline-block;
+  width: 80px;
+}
+
+.link:hover {
+  color: var(--blue-700);
+  text-decoration: underline;
+}
+
+.link::before {
+  content: "";
+  margin-right: 0.5rem;
+  border-left: 1px solid var(--gray-200);
+}

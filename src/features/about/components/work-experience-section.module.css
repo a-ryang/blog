@@ -1,0 +1,9 @@
+.company {
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+.duration {
+  color: var(--text-mute);
+  font-size: var(--font-sm);
+}
