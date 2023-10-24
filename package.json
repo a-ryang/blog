@@ -8,10 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --cache --write ."
+    "format": "prettier --cache --write .",
+    "gen-types": "npx supabase gen types typescript --project-id <YOUR-ID> --schema public > src/libs/supabase/schema.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.13",
+    "@supabase/supabase-js": "^2.38.1",
     "clsx": "^2.0.0",
     "next": "13.5.4",
     "react": "^18",
