@@ -1,289 +1,39 @@
-:root {
-  --white: #fff;
-  --wthie-rgb: 255, 255, 255;
-  --black: #000;
-  --black-rgb: 0, 0, 0;
-  --gray-50: #f5f5f5;
-  --gray-100: #e7e7e7;
-  --gray-200: #cdcdcd;
-  --gray-300: #b2b2b2;
-  --gray-400: #9a9a9a;
-  --gray-500: #8b8b8b;
-  --gray-600: #848484;
-  --gray-700: #717171;
-  --gray-800: #656565;
-  --gray-900: #575757;
-  /* https://github.com/yeun/open-color */
-  --red-50: #fff5f5;
-  --red-50-rgb: 255, 245, 245;
-  --red-100: #ffe3e3;
-  --red-100-rgb: 255, 227, 227;
-  --red-200: #ffc9c9;
-  --red-200-rgb: 255, 201, 201;
-  --red-300: #ffa8a8;
-  --red-300-rgb: 255, 168, 168;
-  --red-400: #ff8787;
-  --red-400-rgb: 255, 135, 135;
-  --red-500: #ff6b6b;
-  --red-500-rgb: 255, 107, 107;
-  --red-600: #fa5252;
-  --red-600-rgb: 250, 82, 82;
-  --red-700: #f03e3e;
-  --red-700-rgb: 240, 62, 62;
-  --red-800: #e03131;
-  --red-800-rgb: 224, 49, 49;
-  --red-900: #c92a2a;
-  --red-900-rgb: 201, 42, 42;
-  --pink-50: #fff0f6;
-  --pink-50-rgb: 255, 240, 246;
-  --pink-100: #ffdeeb;
-  --pink-100-rgb: 255, 222, 235;
-  --pink-200: #fcc2d7;
-  --pink-200-rgb: 252, 194, 215;
-  --pink-300: #faa2c1;
-  --pink-300-rgb: 250, 162, 193;
-  --pink-400: #f783ac;
-  --pink-400-rgb: 247, 131, 172;
-  --pink-500: #f06595;
-  --pink-500-rgb: 240, 101, 149;
-  --pink-600: #e64980;
-  --pink-600-rgb: 230, 73, 128;
-  --pink-700: #d6336c;
-  --pink-700-rgb: 214, 51, 108;
-  --pink-800: #c2255c;
-  --pink-800-rgb: 194, 37, 92;
-  --pink-900: #a61e4d;
-  --pink-900-rgb: 166, 30, 77;
-  --grape-50: #f8f0fc;
-  --grape-50-rgb: 248, 240, 252;
-  --grape-100: #f3d9fa;
-  --grape-100-rgb: 243, 217, 250;
-  --grape-200: #eebefa;
-  --grape-200-rgb: 238, 190, 250;
-  --grape-300: #e599f7;
-  --grape-300-rgb: 229, 153, 247;
-  --grape-400: #da77f2;
-  --grape-400-rgb: 218, 119, 242;
-  --grape-500: #cc5de8;
-  --grape-500-rgb: 204, 93, 232;
-  --grape-600: #be4bdb;
-  --grape-600-rgb: 190, 75, 219;
-  --grape-700: #ae3ec9;
-  --grape-700-rgb: 174, 62, 201;
-  --grape-800: #9c36b5;
-  --grape-800-rgb: 156, 54, 181;
-  --grape-900: #862e9c;
-  --grape-900-rgb: 134, 46, 156;
-  --violet-50: #f3f0ff;
-  --violet-50-rgb: 243, 240, 255;
-  --violet-100: #e5dbff;
-  --violet-100-rgb: 229, 219, 255;
-  --violet-200: #d0bfff;
-  --violet-200-rgb: 208, 191, 255;
-  --violet-300: #b197fc;
-  --violet-300-rgb: 177, 151, 252;
-  --violet-400: #9775fa;
-  --violet-400-rgb: 151, 117, 250;
-  --violet-500: #845ef7;
-  --violet-500-rgb: 132, 94, 247;
-  --violet-600: #7950f2;
-  --violet-600-rgb: 121, 80, 242;
-  --violet-700: #7048e8;
-  --violet-700-rgb: 112, 72, 232;
-  --violet-800: #6741d9;
-  --violet-800-rgb: 103, 65, 217;
-  --violet-900: #5f3dc4;
-  --violet-900-rgb: 95, 61, 196;
-  --indigo-50: #edf2ff;
-  --indigo-50-rgb: 237, 242, 255;
-  --indigo-100: #dbe4ff;
-  --indigo-100-rgb: 219, 228, 255;
-  --indigo-200: #bac8ff;
-  --indigo-200-rgb: 186, 200, 255;
-  --indigo-300: #91a7ff;
-  --indigo-300-rgb: 145, 167, 255;
-  --indigo-400: #748ffc;
-  --indigo-400-rgb: 116, 143, 252;
-  --indigo-500: #5c7cfa;
-  --indigo-500-rgb: 92, 124, 250;
-  --indigo-600: #4c6ef5;
-  --indigo-600-rgb: 76, 110, 245;
-  --indigo-700: #4263eb;
-  --indigo-700-rgb: 66, 99, 235;
-  --indigo-800: #3b5bdb;
-  --indigo-800-rgb: 59, 91, 219;
-  --indigo-900: #364fc7;
-  --indigo-900-rgb: 54, 79, 199;
-  --blue-50: #e7f5ff;
-  --blue-50-rgb: 231, 245, 255;
-  --blue-100: #d0ebff;
-  --blue-100-rgb: 208, 235, 255;
-  --blue-200: #a5d8ff;
-  --blue-200-rgb: 165, 216, 255;
-  --blue-300: #74c0fc;
-  --blue-300-rgb: 116, 192, 252;
-  --blue-400: #4dabf7;
-  --blue-400-rgb: 77, 171, 247;
-  --blue-500: #339af0;
-  --blue-500-rgb: 51, 154, 240;
-  --blue-600: #228be6;
-  --blue-600-rgb: 34, 139, 230;
-  --blue-700: #1c7ed6;
-  --blue-700-rgb: 28, 126, 214;
-  --blue-800: #1971c2;
-  --blue-800-rgb: 25, 113, 194;
-  --blue-900: #1864ab;
-  --blue-900-rgb: 24, 100, 171;
-  --cyan-50: #e3fafc;
-  --cyan-50-rgb: 227, 250, 252;
-  --cyan-100: #c5f6fa;
-  --cyan-100-rgb: 197, 246, 250;
-  --cyan-200: #99e9f2;
-  --cyan-200-rgb: 153, 233, 242;
-  --cyan-300: #66d9e8;
-  --cyan-300-rgb: 102, 217, 232;
-  --cyan-400: #3bc9db;
-  --cyan-400-rgb: 59, 201, 219;
-  --cyan-500: #22b8cf;
-  --cyan-500-rgb: 34, 184, 207;
-  --cyan-600: #15aabf;
-  --cyan-600-rgb: 21, 170, 191;
-  --cyan-700: #1098ad;
-  --cyan-700-rgb: 16, 152, 173;
-  --cyan-800: #0c8599;
-  --cyan-800-rgb: 12, 133, 153;
-  --cyan-900: #0b7285;
-  --cyan-900-rgb: 11, 114, 133;
-  --teal-50: #e6fcf5;
-  --teal-50-rgb: 230, 252, 245;
-  --teal-100: #c3fae8;
-  --teal-100-rgb: 195, 250, 232;
-  --teal-200: #96f2d7;
-  --teal-200-rgb: 150, 242, 215;
-  --teal-300: #63e6be;
-  --teal-300-rgb: 99, 230, 190;
-  --teal-400: #38d9a9;
-  --teal-400-rgb: 56, 217, 169;
-  --teal-500: #20c997;
-  --teal-500-rgb: 32, 201, 151;
-  --teal-600: #12b886;
-  --teal-600-rgb: 18, 184, 134;
-  --teal-700: #0ca678;
-  --teal-700-rgb: 12, 166, 120;
-  --teal-800: #099268;
-  --teal-800-rgb: 9, 146, 104;
-  --teal-900: #087f5b;
-  --teal-900-rgb: 800, 127, 91;
-  --green-50: #ebfbee;
-  --green-50-rgb: 235, 251, 238;
-  --green-100: #d3f9d8;
-  --green-100-rgb: 211, 249, 216;
-  --green-200: #b2f2bb;
-  --green-200-rgb: 178, 242, 187;
-  --green-300: #8ce99a;
-  --green-300-rgb: 140, 233, 154;
-  --green-400: #69db7c;
-  --green-400-rgb: 105, 219, 124;
-  --green-500: #51cf66;
-  --green-500-rgb: 81, 207, 102;
-  --green-600: #40c057;
-  --green-600-rgb: 64, 192, 87;
-  --green-700: #37b24d;
-  --green-700-rgb: 55, 178, 77;
-  --green-800: #2f9e44;
-  --green-800-rgb: 47, 158, 68;
-  --green-900: #2b8a3e;
-  --green-900-rgb: 43, 138, 62;
-  --lime-50: #f4fce3;
-  --lime-50-rgb: 244, 252, 227;
-  --lime-100: #e9fac8;
-  --lime-100-rgb: 233, 250, 200;
-  --lime-200: #d8f5a2;
-  --lime-200-rgb: 216, 245, 162;
-  --lime-300: #c0eb75;
-  --lime-300-rgb: 192, 235, 117;
-  --lime-400: #a9e34b;
-  --lime-400-rgb: 169, 227, 75;
-  --lime-500: #94d82d;
-  --lime-500-rgb: 148, 216, 45;
-  --lime-600: #82c91e;
-  --lime-600-rgb: 130, 201, 30;
-  --lime-700: #74b816;
-  --lime-700-rgb: 116, 184, 22;
-  --lime-800: #66a80f;
-  --lime-800-rgb: 102, 168, 15;
-  --lime-900: #5c940d;
-  --lime-900-rgb: 92, 148, 13;
-  --yellow-50: #fff9db;
-  --yellow-50-rgb: 255, 249, 219;
-  --yellow-100: #fff3bf;
-  --yellow-100-rgb: 255, 243, 191;
-  --yellow-200: #ffec99;
-  --yellow-200-rgb: 255, 236, 153;
-  --yellow-300: #ffe066;
-  --yellow-300-rgb: 255, 224, 102;
-  --yellow-400: #ffd43b;
-  --yellow-400-rgb: 255, 212, 59;
-  --yellow-500: #fcc419;
-  --yellow-500-rgb: 252, 196, 25;
-  --yellow-600: #fab005;
-  --yellow-600-rgb: 250, 176, 5;
-  --yellow-700: #f59f00;
-  --yellow-700-rgb: 245, 159, 0;
-  --yellow-800: #f08c00;
-  --yellow-800-rgb: 240, 140, 0;
-  --yellow-900: #e67700;
-  --yellow-900-rgb: 230, 119, 0;
-  --orange-50: #fff4e6;
-  --orange-50-rgb: 255, 244, 230;
-  --orange-100: #ffe8cc;
-  --orange-100-rgb: 255, 232, 204;
-  --orange-200: #ffd8a8;
-  --orange-200-rgb: 255, 216, 168;
-  --orange-300: #ffc078;
-  --orange-300-rgb: 255, 192, 120;
-  --orange-400: #ffa94d;
-  --orange-400-rgb: 255, 169, 77;
-  --orange-500: #ff922b;
-  --orange-500-rgb: 255, 146, 43;
-  --orange-600: #fd7e14;
-  --orange-600-rgb: 253, 126, 20;
-  --orange-700: #f76707;
-  --orange-700-rgb: 247, 103, 7;
-  --orange-800: #e8590c;
-  --orange-800-rgb: 232, 89, 12;
-  --orange-900: #d9480f;
-  --orange-900-rgb: 217, 72, 15;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --text-1rd: #222;
-  --text-mute: var(--gray-700);
+@layer components {
+  .text-content {
+    @apply text-base-800;
+  }
 
-  --font-xs: 0.75rem; /* 12px */
-  --font-sm: 0.875rem; /* 14px */
-  --font-md: 1rem;
-  --font-lg: 1.125rem; /* 18px */
-  --font-xl: 1.25rem; /* 20px */
-  --font-2xl: 1.5rem; /* 24px */
-  --font-3xl: 1.875rem; /* 30px */
+  .text-ui {
+    @apply text-base-700;
+  }
 
-  --bg-1rd: var(--gray-50);
-  --bg-2rd: var(--gray-100);
-  --bg-3rd: #222;
+  .text-mute {
+    @apply text-base-600;
+  }
+
+  .text-disabled {
+    @apply text-base-500;
+  }
+
+  .bd-default {
+    @apply border-base-300;
+  }
+
+  .bd-active {
+    @apply border-base-400;
+  }
+
+  .bd-disabled {
+    @apply border-base-200;
+  }
 }
 
-html,
-body {
-  width: 100%;
-  min-height: 100vh;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo",
-    "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR",
-    arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-  color: var(--text-1rd);
-  background-color: var(--bg-1rd);
+@layer base {
+  html {
+    @apply text-content;
+  }
 }
