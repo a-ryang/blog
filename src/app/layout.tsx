@@ -1,13 +1,31 @@
-import "@/styles/reset.css";
-import "@/styles/global.css";
-import "@/styles/utils.css";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Noto_Sans_KR } from "next/font/google";
 
-import Providers from "@/providers/providers";
-import { AppShell } from "@/components/app-shell";
+import "./global.css";
 
-const font = localFont({ src: "./PretendardVariable.woff2" });
+const notoSans = Noto_Sans_KR({
+  weight: ["400", "500", "700", "800"],
+  display: "swap",
+  subsets: ["latin"],
+  fallback: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Helvetica Neue",
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    "맑은 고딕",
+    "나눔고딕",
+    "Nanum Gothic",
+    "Noto Sans KR",
+    "Noto Sans CJK KR",
+    "arial",
+    "돋움",
+    "Dotum",
+    "Tahoma",
+    "Geneva",
+    "sans-serif",
+  ],
+});
 
 export const metadata: Metadata = {
   title: "chanwu blog",
@@ -46,11 +64,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className={font.className}>
-        <Providers>
-          <AppShell>{children}</AppShell>
-        </Providers>
-      </body>
+      <body className={notoSans.className}>{children}</body>
     </html>
   );
 }
