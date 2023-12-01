@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply text-content;
+  }
+
+  html,
+  body,
+  body > div:first-child,
+  div#__next,
+  div#__next > div {
+    @apply h-full;
+  }
+}
+
 @layer components {
   .text-content {
     @apply text-base-800;
@@ -29,11 +43,5 @@
 
   .bd-disabled {
     @apply border-base-200;
-  }
-}
-
-@layer base {
-  html {
-    @apply text-content;
   }
 }
