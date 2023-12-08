@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --cache --write .",
-    "gen-types": "npx supabase gen types typescript --project-id <YOUR-ID> --schema public > src/libs/supabase/schema.ts"
+    "format": "prettier --cache --write ."
   },
   "dependencies": {
     "@codemirror/lang-markdown": "^6.2.3",
