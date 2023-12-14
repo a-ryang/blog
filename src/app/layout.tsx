@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 
-import "./global.css";
+import "./globals.css";
 
 const notoSans = Noto_Sans_KR({
   weight: ["400", "500", "700", "800"],
@@ -10,20 +10,14 @@ const notoSans = Noto_Sans_KR({
   fallback: [
     "-apple-system",
     "BlinkMacSystemFont",
-    "Helvetica Neue",
-    "Apple SD Gothic Neo",
-    "Malgun Gothic",
-    "맑은 고딕",
-    "나눔고딕",
-    "Nanum Gothic",
-    "Noto Sans KR",
-    "Noto Sans CJK KR",
-    "arial",
-    "돋움",
-    "Dotum",
-    "Tahoma",
-    "Geneva",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica",
+    "Neue",
+    "Arial",
     "sans-serif",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
   ],
 });
 
@@ -61,7 +55,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ko">
       <body className={notoSans.className}>{children}</body>
