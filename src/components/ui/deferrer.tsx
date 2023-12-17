@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { StrictPropsWithChildren } from "@/libs/util";
+import { StrictPropsWithChildren } from "@/utils/react";
 
 interface DeferrerProps {
   ms?: number;
