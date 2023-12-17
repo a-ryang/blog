@@ -23,6 +23,7 @@ const notoSans = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     template: "%s | chanwu blog",
     default: siteConfig.title,
