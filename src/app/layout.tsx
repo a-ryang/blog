@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 
 import "./globals.css";
+import { siteConfig } from "@/config";
 
 const notoSans = Noto_Sans_KR({
   weight: ["400", "500", "700", "800"],
@@ -22,36 +23,34 @@ const notoSans = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "chanwu blog",
+  title: {
+    template: "%s | chanwu blog",
+    default: siteConfig.title,
+  },
   description: "개발 주저리 주저리",
+  openGraph: {
+    title: siteConfig.title,
+    url: siteConfig.url,
+    siteName: siteConfig.title,
+    type: "website",
+    images: [
+      {
+        url: "/public/a-ryang.jpeg",
+      },
+    ],
+  },
+  twitter: {
+    title: siteConfig.title,
+    card: "summary_large_image",
+  },
   icons: {
-    icon: [
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "16x16",
-        url: "/favicons/favicon-16x16.png",
-      },
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "32x32",
-        url: "/favicons/favicon-32x32.png",
-      },
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "96x96",
-        url: "/favicons/favicon-96x96.png",
-      },
-    ],
-    apple: [
-      {
-        rel: "apple-touch-icon",
-        sizes: "152x152",
-        url: "/favicons/apple-icon-152x152.png",
-      },
-    ],
+    icon: "/favicon/apple-icon.png",
+    shortcut: "/favicon/apple-icon.png",
+    apple: "/favicon/apple-icon.png",
+    other: {
+      rel: "/favicon/apple-icon-precomposed",
+      url: "/favicon/apple-icon-precomposed.png",
+    },
   },
 };
 
