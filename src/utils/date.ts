@@ -6,3 +6,8 @@ export function formatDatetime(datetime: string) {
 
   return `${year}-${month}-${day}`;
 }
+
+export function extractYear(datetime: string) {
+  const date = new Date(datetime);
+  return date.getFullYear();
+}
