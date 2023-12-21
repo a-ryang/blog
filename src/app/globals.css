@@ -29,6 +29,10 @@
     color: theme(colors.base.600);
   }
 
+  .text-inverte {
+    color: theme(colors.white/0.85);
+  }
+
   .text-disabled {
     color: theme(colors.base.500);
   }
