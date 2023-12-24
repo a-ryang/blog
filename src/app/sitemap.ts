@@ -3,7 +3,7 @@ import { getAllPost } from "@/utils/post";
 
 export default async function sitemap() {
   const { url, path } = siteConfig;
-  const posts = getAllPost(["slug"]);
+  const posts = getAllPost(["slug", "datetime"]);
 
   const blogs = posts.map((post) => ({
     url: `${url}${path.postDetail}/${post.slug}`,
