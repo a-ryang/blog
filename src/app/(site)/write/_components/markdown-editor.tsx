@@ -35,7 +35,11 @@ export default function MarkdownEditor({
 
     const state = EditorState.create({
       doc: markdown,
-      extensions: [updateListenerExtension, langMarkdown()],
+      extensions: [
+        updateListenerExtension,
+        langMarkdown(),
+        EditorView.lineWrapping,
+      ],
     });
     const view = new EditorView({ state, parent: editor.current });
 
@@ -47,9 +51,5 @@ export default function MarkdownEditor({
     };
   }, []);
 
-  return (
-    <section ref={editor} className="flex flex-col flex-1 p-4">
-      <h1 className="hidden">editor</h1>
-    </section>
-  );
+  return <div ref={editor} />;
 }
