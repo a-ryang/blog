@@ -45,6 +45,9 @@ export function getPostBySlugWithYear(
   fields: FrontMatterAndPostKeys[] = [],
 ) {
   const postPath = join(postsDirectory, `${year}/${slug}.md`);
+
+  if (!fs.existsSync(postPath)) return null;
+
   const post = getPostByPath(postPath, [...fields, "isPublished"]);
   return post;
 }
