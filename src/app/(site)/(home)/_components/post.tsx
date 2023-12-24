@@ -20,7 +20,7 @@ export default function Post({ post }: PostProps) {
         </h1>
       </header>
 
-      {summary && <p className="mt-2 text-mute">{summary}</p>}
+      {summary && <p className="mt-2 text-sm text-mute">{summary}</p>}
 
       <div className="mt-2 space-x-2">
         <time dateTime={datetime} className="text-xs text-mute">
