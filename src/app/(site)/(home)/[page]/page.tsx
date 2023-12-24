@@ -14,7 +14,7 @@ export function generateStaticParams() {
   const posts = getAllPost([]);
 
   return [...new Array(Math.round(posts.length / sizePerPage)).keys()].map(
-    (i) => ({ id: `${i + 1}` }),
+    (i) => ({ page: `${i + 1}` }),
   );
 }
 

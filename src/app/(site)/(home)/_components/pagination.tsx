@@ -6,11 +6,13 @@ import { siteConfig } from "@/config";
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
+  baseUrl?: string;
 }
 
 export default function Pagination({
   currentPage,
   totalPages,
+  baseUrl = "",
 }: PaginationProps) {
   const { sizePerPage } = siteConfig;
 
@@ -31,7 +33,7 @@ export default function Pagination({
       <ul className="flex gap-2">
         <li>
           {hasPrev && (
-            <Page href={`/${currentPage - 1}`}>
+            <Page href={`${baseUrl}/${currentPage - 1}`}>
               <CaretLeft weight="bold" size={16} />
             </Page>
           )}
@@ -39,17 +41,17 @@ export default function Pagination({
         {pageNums.map((pageNum) => (
           <li key={pageNum}>
             {pageNum === currentPage ? (
-              <Page isActive={true} href={`/${pageNum}`}>
+              <Page isActive={true} href={`${baseUrl}/${pageNum}`}>
                 {pageNum}
               </Page>
             ) : (
-              <Page href={`/${pageNum}`}>{pageNum}</Page>
+              <Page href={`${baseUrl}/${pageNum}`}>{pageNum}</Page>
             )}
           </li>
         ))}
         <li>
           {hasNext && (
-            <Page href={`/${currentPage + 1}`}>
+            <Page href={`${baseUrl}/${currentPage + 1}`}>
               <CaretRight weight="bold" size={16} />
             </Page>
           )}

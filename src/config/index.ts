@@ -10,6 +10,7 @@ export const siteConfig = {
     about: "/about",
     postWrite: "/write",
     postDetail: "/posts",
+    tags: "/tags",
   },
   sizePerPage: 5,
 };

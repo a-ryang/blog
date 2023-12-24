@@ -1,13 +1,37 @@
+import Link from "next/link";
+import clsx from "clsx";
+
+import { siteConfig } from "@/config";
+
+const variants = {
+  light: "bg-gray-100",
+  filled: "bg-gray-900 text-inverte",
+};
+
 const sizes = {
-  sm: "px-1.5 py-0.5 bg-gray-100 text-xs rounded-full",
-  md: "px-2 py-0.5 bg-gray-100 text-sm rounded-full",
+  sm: "px-1.5 py-0.5 text-xs",
+  md: "px-2 py-1 text-sm",
 };
 
 interface TagProps {
   title: string;
+  href?: string;
+  variant?: keyof typeof variants;
   size?: keyof typeof sizes;
 }
 
-export default function Tag({ title, size = "md" }: TagProps) {
-  return <span className={sizes[size]}>{title.replace(/ /g, "_")}</span>;
+export default function Tag({
+  title,
+  href,
+  size = "md",
+  variant = "light",
+}: TagProps) {
+  return (
+    <Link
+      href={href ? href : `${siteConfig.path.tags}/${title}/1`}
+      className={clsx(sizes[size], variants[variant], "rounded-full")}
+    >
+      {title.replace(/ /g, "_")}
+    </Link>
+  );
 }
