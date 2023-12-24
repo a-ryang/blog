@@ -12,8 +12,11 @@
   },
   "dependencies": {
     "@codemirror/lang-markdown": "^6.2.3",
+    "@phosphor-icons/react": "^2.0.15",
     "clsx": "^2.0.0",
     "codemirror": "^6.0.1",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
     "next": "14.0.3",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
