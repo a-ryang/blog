@@ -1,7 +1,7 @@
 "use client";
 
-import "./prism-vsc-dark-plus.css";
-import "./prism-plugin.css";
+import "@/styles/prism-vsc-dark-plus.css";
+import "@/styles/prism-plugin.css";
 
 import { useEffect, useState } from "react";
 import { unified } from "unified";

@@ -7,7 +7,9 @@ export default function SiteLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Header />
-      <main className="mx-auto container px-4 py-10 md:px-8">{children}</main>
+      <main className="mx-auto container min-h-screen px-4 py-20 md:px-8">
+        {children}
+      </main>
       <Footer />
     </>
   );

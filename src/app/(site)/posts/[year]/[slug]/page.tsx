@@ -1,6 +1,9 @@
+import { notFound } from "next/navigation";
+
 import markdownToHtml from "@/utils/markdown-to-html";
 import { getPostBySlugWithYear } from "@/utils/post";
-import { notFound } from "next/navigation";
+
+import PostRenderer from "./_components/post-renderer";
 
 export async function generateMetadata({
   params,
@@ -31,9 +34,9 @@ export default async function PostDetail({
   const realContent = await markdownToHtml(content);
 
   return (
-    <article className="w-full max-w-3xl mx-auto">
+    <article className="w-full max-w-3xl mx-auto lg:mt-20">
       <header className="pt-10 pb-10 border-b border-b-gray-300">
-        <h1 className="text-3xl lg:text-5xl leading-normal font-semibold">
+        <h1 className="text-3xl lg:text-4xl leading-normal font-semibold">
           {frontMatter.title}
         </h1>
         <div className="mt-4">
@@ -43,11 +46,8 @@ export default async function PostDetail({
         </div>
       </header>
 
-      <div className="min-h-screen pt-10">
-        <div
-          dangerouslySetInnerHTML={{ __html: realContent }}
-          className="prose"
-        />
+      <div className="pt-10">
+        <PostRenderer post={realContent} />
       </div>
     </article>
   );

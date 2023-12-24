@@ -1,6 +1,6 @@
 "use client";
 
-import "./markdown-editor.css";
+import "@/styles/markdown-editor.css";
 import { useEffect, useRef } from "react";
 import { EditorState } from "@codemirror/state";
 import { EditorView, ViewUpdate } from "@codemirror/view";
