@@ -7,7 +7,9 @@ export const siteConfig = {
   title: "Chanwu Dev Blog",
   path: {
     home: "/",
+    about: "/about",
     postWrite: "/write",
     postDetail: "/posts",
   },
+  sizePerPage: 5,
 };
