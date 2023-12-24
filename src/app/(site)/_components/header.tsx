@@ -10,7 +10,7 @@ export default function Header() {
         <h1>
           <Link href={siteConfig.path.home} className="flex items-center">
             <Image
-              alt={siteConfig.author.name}
+              alt="프로필 이미지"
               src={siteConfig.author.image}
               width={32}
               height={32}

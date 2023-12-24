@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { siteConfig } from "@/config";
 
 const variants = {
-  light: "bg-gray-100",
+  light: "bg-gray-100 hover:bg-blue-500 hover:text-inverte",
   filled: "bg-gray-900 text-inverte",
 };
 
@@ -29,9 +29,9 @@ export default function Tag({
   return (
     <Link
       href={href ? href : `${siteConfig.path.tags}/${title}/1`}
-      className={clsx(sizes[size], variants[variant], "rounded-full")}
+      className={clsx(sizes[size], variants[variant], "rounded-full ")}
     >
-      {title.replace(/ /g, "_")}
+      {title}
     </Link>
   );
 }
