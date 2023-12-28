@@ -19,6 +19,14 @@ module.exports = {
           900: "#212529",
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
