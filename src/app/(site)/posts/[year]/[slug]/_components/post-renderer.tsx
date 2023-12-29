@@ -14,7 +14,7 @@ export default function PostRenderer({ post }: PostRendererProps) {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: post }}
-      className="prose prose-img:rounded max-w-none"
+      className="prose max-w-none"
     />
   );
 }

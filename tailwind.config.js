@@ -19,14 +19,27 @@ module.exports = {
           900: "#212529",
         },
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             "blockquote p:first-of-type::before": { content: "none" },
             "blockquote p:first-of-type::after": { content: "none" },
+            "blockquote p": { fontStyle: "normal" },
+            "code::before": { content: "none" },
+            "code::after": { content: "none" },
+            code: {
+              color: theme("colors.blue.600"),
+              backgroundColor: theme("colors.gray.100"),
+              padding: "2px 4px",
+              borderRadius: "2px",
+              fontSize: "0.8em",
+            },
+            img: {
+              borderRadius: theme("borderRadius.sm"),
+            },
           },
         },
-      },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
