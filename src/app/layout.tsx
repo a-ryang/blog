@@ -53,6 +53,9 @@ export const metadata: Metadata = {
       url: "/favicon/apple-icon-precomposed.png",
     },
   },
+  verification: {
+    google: "4oQP_trevE42WBKpMlDz8vUk9MCv5ZmlXECFFyGNv8w",
+  },
 };
 
 export default function RootLayout({
