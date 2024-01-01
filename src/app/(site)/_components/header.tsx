@@ -5,7 +5,7 @@ import { siteConfig } from "@/config";
 
 export default function Header() {
   return (
-    <header className="fixed w-full top-0 bg-white">
+    <header className="fixed w-full top-0 bg-white z-[1000]">
       <div className="mx-auto container px-4 md:px-8 py-5 flex items-center justify-between ">
         <h1>
           <Link href={siteConfig.path.home} className="flex items-center">
