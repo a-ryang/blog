@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 import { siteConfig } from "@/config";
@@ -65,7 +66,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={notoSans.className}>{children}</body>
+      <body className={notoSans.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

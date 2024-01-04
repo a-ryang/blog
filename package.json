@@ -13,6 +13,7 @@
   "dependencies": {
     "@codemirror/lang-markdown": "^6.2.3",
     "@phosphor-icons/react": "^2.0.15",
+    "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
     "codemirror": "^6.0.1",
     "fast-glob": "^3.3.2",
