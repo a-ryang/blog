@@ -7,6 +7,7 @@ import rehypeStringify from "rehype-stringify";
 import "prismjs/components/prism-java.min";
 import "prismjs/components/prism-javascript.min";
 import "prismjs/components/prism-css.min";
+import "prismjs/components/prism-sql.min";
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified() // 플러그인 기반의 문서 처리
