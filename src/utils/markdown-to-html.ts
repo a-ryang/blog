@@ -1,5 +1,6 @@
 import { unified } from "unified";
 import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypePrism from "rehype-prism";
 import rehypeStringify from "rehype-stringify";
@@ -12,6 +13,7 @@ import "prismjs/components/prism-sql.min";
 export default async function markdownToHtml(markdown: string) {
   const result = await unified() // 플러그인 기반의 문서 처리
     .use(remarkParse) // markdown 텍스트를 MDAST (Markdown Abstract Syntax Tree)로 변환
+    .use(remarkGfm) // support GFM (autolink literals, footnotes, strikethrough, tables, tasklists)
     .use(remarkRehype) // MDAST를 HAST (Hypertext Abstract Syntax Tree)로 변환
     .use(rehypePrism, {
       plugins: ["line-numbers", "toolbar", "copy-to-clipboard"],
@@ -21,3 +23,4 @@ export default async function markdownToHtml(markdown: string) {
 
   return result.toString();
 }
+
