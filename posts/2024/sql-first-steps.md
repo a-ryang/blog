@@ -57,3 +57,21 @@ ORDER BY b, a;
 
 2. 복수의 열 또한 개별적으로 정렬 방법(ASC, DESC)을 지정할 수 있다.
 3. `NULL` 값의 정렬 순서는 DB마다 다르다. MySQL의 경우 `NULL` 값을 가장 작은 값으로 취급한다.
+
+### 결과 행 제한하기 - LIMIT
+
+`LIMIT` 구로 `SELECT`구의 결과 행수를 제한할 수 있다.
+
+```sql
+SELECT 열명 FROM 테이블 LIMIT 행수 [OFFSET 시작행]
+```
+
+단, MySQL과 PostgreSQL에서 사용할 수 있는 문법인 점에 유의하자.
+
+```sql
+SELECT 열명 FROM 테이블 LIMIT 행수 OFFSET 위치
+```
+
+`LIMIT`을 `OFFSET`과 함께 사용하면 페이지 매김 기능을 편하게 구현할 수 있다.
+
+OFFSET의 값은 `시작할 행 - 1`로 기억해두면 편하다.
