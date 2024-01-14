@@ -25,6 +25,11 @@ module.exports = {
             "blockquote p:first-of-type::before": { content: "none" },
             "blockquote p:first-of-type::after": { content: "none" },
             "blockquote p": { fontStyle: "normal" },
+            blockquote: {
+              paddingTop: theme("padding.1"),
+              paddingBottom: theme("padding.1"),
+              backgroundColor: theme("colors.gray.50"),
+            },
             "code::before": { content: "none" },
             "code::after": { content: "none" },
             code: {
