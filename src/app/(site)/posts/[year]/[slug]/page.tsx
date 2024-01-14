@@ -38,11 +38,11 @@ export default async function PostDetail({
     <>
       <article className="w-full max-w-3xl mx-auto lg:mt-20">
         <header className="pt-10 pb-10 border-b border-b-gray-300">
-          <h1 className="text-3xl lg:text-4xl leading-normal font-semibold">
+          <h1 className="text-3xl text-center lg:text-4xl leading-normal font-semibold">
             {frontMatter.title}
           </h1>
-          <div className="mt-4">
-            <time dateTime={"2024-01-01"} className="text-mute">
+          <div className="mt-4 text-center">
+            <time dateTime={"2024-01-01"} className="text-mute text-sm">
               {frontMatter.datetime}
             </time>
           </div>
