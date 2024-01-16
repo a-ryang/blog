@@ -22,12 +22,13 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            p: { fontSize: "15px" },
-            li: { fontSize: "15px" },
+            p: { fontSize: "15px", marginTop: "0px", marginBottom: "0px" },
+            li: { fontSize: "15px", marginTop: "2px", marginBottom: "2px" },
             "blockquote p:first-of-type::before": { content: "none" },
             "blockquote p:first-of-type::after": { content: "none" },
-            "blockquote p": { fontStyle: "normal" },
+            "blockquote p": { fontStyle: "normal", fontWeight: "400" },
             blockquote: {
+              color: theme("colors.gray.700"),
               paddingTop: theme("padding.1"),
               paddingBottom: theme("padding.1"),
               backgroundColor: theme("colors.gray.50"),
