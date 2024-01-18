@@ -18,7 +18,7 @@ export default function TagList({ tags, activeTag }: TagListProps) {
   const displayedTags = isOpen ? tags : tags.slice(0, MAX_TAGS);
 
   return (
-    <aside className="w-full lg:max-w-xs">
+    <aside className="w-full mt-10 lg:max-w-xs">
       <h1 className="text-sm font-semibold">TAGS</h1>
 
       <ul className="flex flex-wrap gap-2 mt-2">

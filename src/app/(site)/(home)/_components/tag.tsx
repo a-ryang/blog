@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { siteConfig } from "@/config";
 
 const variants = {
-  light: "bg-gray-100 hover:bg-blue-500 hover:text-inverte",
+  light: "bg-gray-100",
   filled: "bg-gray-900 text-inverte",
 };
 

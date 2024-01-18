@@ -72,7 +72,7 @@ function Page({
 }) {
   if (isActive)
     return (
-      <span className="inline-flex items-center justify-center rounded w-8 h-8 bg-blue-600 text-inverte text-sm">
+      <span className="inline-flex items-center justify-center rounded w-8 h-8 bg-gray-800 text-inverte text-sm font-bold">
         {children}
       </span>
     );
