@@ -13,10 +13,13 @@
   "dependencies": {
     "@codemirror/lang-markdown": "^6.2.3",
     "@phosphor-icons/react": "^2.0.15",
+    "@tanstack/react-query": "^5.17.19",
+    "@tanstack/react-query-devtools": "^5.17.21",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
     "codemirror": "^6.0.1",
     "fast-glob": "^3.3.2",
+    "firebase-admin": "^12.0.0",
     "gray-matter": "^4.0.3",
     "next": "14.0.3",
     "prismjs": "^1.29.0",

@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { siteConfig } from "@/config";
 
+import Providers from "./providers";
+
 const notoSans = Noto_Sans_KR({
   weight: ["400", "500", "700", "800"],
   display: "swap",
@@ -67,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={notoSans.className}>
-        {children}
+        <Providers>{children}</Providers>
         <Analytics />
       </body>
     </html>
