@@ -5,6 +5,7 @@ import { getPostBySlugWithYear } from "@/utils/post";
 
 import PostRenderer from "./_components/post-renderer";
 import Comment from "./_components/comment";
+import ViewCounter from "./_components/view-counter";
 
 export async function generateMetadata({
   params,
@@ -42,9 +43,10 @@ export default async function PostDetail({
             {frontMatter.title}
           </h1>
           <div className="mt-4 text-center">
-            <time dateTime={"2024-01-01"} className="text-mute text-sm">
-              {frontMatter.datetime}
-            </time>
+            <span className="text-mute text-sm">
+              <time dateTime={"2024-01-01"}>{frontMatter.datetime}</time> ·{" "}
+              <ViewCounter slug={slug} />
+            </span>
           </div>
         </header>
 
