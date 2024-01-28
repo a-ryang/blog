@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import markdownToHtml from "@/utils/markdown-to-html";
 import { getPostBySlugWithYear } from "@/utils/post";
 
+import ViewCounter from "@/components/view-counter";
+
 import PostRenderer from "./_components/post-renderer";
 import Comment from "./_components/comment";
-import ViewCounter from "./_components/view-counter";
 
 export async function generateMetadata({
   params,
@@ -45,7 +46,7 @@ export default async function PostDetail({
           <div className="mt-4 text-center">
             <span className="text-mute text-sm">
               <time dateTime={"2024-01-01"}>{frontMatter.datetime}</time> ·{" "}
-              <ViewCounter slug={slug} />
+              <ViewCounter isViewCounted={true} slug={slug} />
             </span>
           </div>
         </header>
