@@ -32,7 +32,8 @@ export default function TagsPage({
 }: {
   params: { tag: string; page: string };
 }) {
-  const { tag, page } = params;
+  const { tag: encodedTag, page } = params;
+  const tag = decodeURIComponent(encodedTag);
 
   const posts = getAllPost(["title", "summary", "datetime", "tags"]);
   const tags = getAllTags();
@@ -56,7 +57,7 @@ export default function TagsPage({
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        baseUrl={`${siteConfig.path.tags}/${tag}`}
+        baseUrl={`${siteConfig.path.tags}/${encodedTag}`}
       />
     </div>
   );
