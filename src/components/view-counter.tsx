@@ -1,7 +1,9 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+
+import { isDev } from "@/utils/react";
 
 interface ViewCounterProps {
   slug: string;
@@ -21,6 +23,7 @@ export default function ViewCounter({
     const increaseViews = () => fetch(`/api/views/${slug}`, { method: "POST" });
 
     if (!isViewCounted) return;
+    if (isDev) return;
 
     increaseViews();
   }, [slug, isViewCounted]);
