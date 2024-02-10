@@ -3,17 +3,17 @@ import { CaretLeft, CaretRight } from "@phosphor-icons/react/dist/ssr";
 
 import { siteConfig } from "@/config";
 
-interface PaginationProps {
+type Props = {
   currentPage: number;
   totalPages: number;
   baseUrl?: string;
-}
+};
 
 export default function Pagination({
   currentPage,
   totalPages,
   baseUrl = "",
-}: PaginationProps) {
+}: Props) {
   const { sizePerPage } = siteConfig;
 
   const startPage =
@@ -72,7 +72,7 @@ function Page({
 }) {
   if (isActive)
     return (
-      <span className="inline-flex items-center justify-center rounded w-8 h-8 bg-gray-800 text-inverte text-sm font-bold">
+      <span className="inline-flex items-center justify-center rounded w-8 h-8 bg-base-900 text-inverte text-sm font-bold">
         {children}
       </span>
     );

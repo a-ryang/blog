@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import clsx from "clsx";
 
-import "./globals.css";
 import { siteConfig } from "@/config";
 
+import "./globals.css";
 import Providers from "./providers";
 
 const notoSans = Noto_Sans_KR({
@@ -68,7 +69,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={notoSans.className}>
+      <body className={clsx(notoSans.className, "bg-base-100")}>
         <Providers>{children}</Providers>
         <Analytics />
       </body>

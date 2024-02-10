@@ -4,14 +4,14 @@ import { useState } from "react";
 
 import { siteConfig } from "@/config";
 
-import Tag from "./tag";
+import TagItem from "./tag-item";
 
-interface TagListProps {
+type Props = {
   tags: string[];
   activeTag?: string;
-}
+};
 
-export default function TagList({ tags, activeTag }: TagListProps) {
+export default function TagsOfSide({ tags, activeTag }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const MAX_TAGS = 9;
 
@@ -23,7 +23,7 @@ export default function TagList({ tags, activeTag }: TagListProps) {
 
       <ul className="flex flex-wrap gap-2 mt-2">
         <li>
-          <Tag
+          <TagItem
             title="전체"
             href={siteConfig.path.home}
             variant={activeTag ? "light" : "filled"}
@@ -31,7 +31,10 @@ export default function TagList({ tags, activeTag }: TagListProps) {
         </li>
         {displayedTags.map((tag) => (
           <li key={tag}>
-            <Tag title={tag} variant={tag === activeTag ? "filled" : "light"} />
+            <TagItem
+              title={tag}
+              variant={tag === activeTag ? "filled" : "light"}
+            />
           </li>
         ))}
       </ul>

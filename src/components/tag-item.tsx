@@ -4,8 +4,8 @@ import clsx from "clsx";
 import { siteConfig } from "@/config";
 
 const variants = {
-  light: "bg-gray-100",
-  filled: "bg-gray-900 text-inverte",
+  light: "bg-base-200",
+  filled: "bg-base-900 text-inverte",
 };
 
 const sizes = {
@@ -13,19 +13,19 @@ const sizes = {
   md: "px-2 py-1 text-sm",
 };
 
-interface TagProps {
+type Props = {
   title: string;
   href?: string;
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
-}
+};
 
 export default function Tag({
   title,
   href,
   size = "md",
   variant = "light",
-}: TagProps) {
+}: Props) {
   return (
     <Link
       href={href ? href : `${siteConfig.path.tags}/${title}/1`}

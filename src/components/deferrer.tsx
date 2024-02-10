@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 
 import { StrictPropsWithChildren } from "@/utils/react";
 
-interface DeferrerProps {
+type Props = {
   ms?: number;
-}
+};
 
 export default function Deferrer({
   ms = 200,
   children,
-}: StrictPropsWithChildren<DeferrerProps>) {
+}: StrictPropsWithChildren<Props>) {
   const [isDeferred, setIsDeferred] = useState(false);
 
   useEffect(() => {

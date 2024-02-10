@@ -4,11 +4,11 @@ import { siteConfig } from "@/config";
 
 import PostDetail from "./post-detail";
 
-interface PostProps {
+type Props = {
   post: Post;
-}
+};
 
-export default function Post({ post }: PostProps) {
+export default function PostItem({ post }: Props) {
   const { frontMatter, slug } = post;
   const { title, summary, datetime, tags } = frontMatter;
 
@@ -17,7 +17,7 @@ export default function Post({ post }: PostProps) {
   const slugWithoutYear = slug.split("/")[1];
 
   return (
-    <article className="flex flex-col py-10 border-b bd-default">
+    <article className="flex flex-col py-10 border-b border-base-300">
       <header>
         <h1 className="hover:underline text-xl font-bold overflow-hidden text-ellipsis line-clamp-2">
           <Link href={href}>{title} </Link>

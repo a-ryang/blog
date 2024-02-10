@@ -1,12 +1,12 @@
 import { siteConfig } from "@/config";
 
-import Post from "./post";
+import PostItem from "./post-item";
 
-interface PostListProps {
+type Props = {
   posts: Post[];
-}
+};
 
-export default function PostList({ posts }: PostListProps) {
+export default function PostSection({ posts }: Props) {
   const recentPosts = posts.slice(0, siteConfig.sizePerPage);
 
   return (
@@ -15,7 +15,7 @@ export default function PostList({ posts }: PostListProps) {
       <ul>
         {recentPosts.map((post) => (
           <li key={post.slug} className="my-4">
-            <Post post={post} />
+            <PostItem post={post} />
           </li>
         ))}
       </ul>

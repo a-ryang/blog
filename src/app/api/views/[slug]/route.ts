@@ -1,4 +1,4 @@
-import db from "@/libs/firebase";
+import db from "@/libs/db";
 
 export async function GET(
   request: Request,

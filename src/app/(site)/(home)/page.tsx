@@ -1,9 +1,10 @@
-import { getAllPost, getAllTags } from "@/utils/post";
-import { siteConfig } from "@/config";
+import PostSection from "@/components/post-section";
+import TagsOfSide from "@/components/tags-of-side";
+import Pagination from "@/components/pagination";
 
-import PostList from "./_components/post-list";
-import TagList from "./_components/tag-list";
-import Pagination from "./_components/pagination";
+import { getAllPost, getAllTags } from "@/utils/post";
+
+import { siteConfig } from "@/config";
 
 export default function HomePage() {
   const posts = getAllPost(["title", "summary", "datetime", "tags"]);
@@ -14,8 +15,8 @@ export default function HomePage() {
   return (
     <div>
       <div className="flex flex-col lg:flex-row-reverse lg:gap-10">
-        <TagList tags={tags} />
-        <PostList posts={posts} />
+        <TagsOfSide tags={tags} />
+        <PostSection posts={posts} />
       </div>
       <Pagination currentPage={1} totalPages={totalPages} />
     </div>

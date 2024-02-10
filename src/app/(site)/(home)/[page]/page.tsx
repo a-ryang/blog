@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 
-import { siteConfig } from "@/config";
+import Pagination from "@/components/pagination";
+import TagsOfSide from "@/components/tags-of-side";
+import PostSection from "@/components/post-section";
+
 import { getAllPost, getAllTags } from "@/utils/post";
-import TagList from "../_components/tag-list";
-import PostList from "../_components/post-list";
-import Pagination from "../_components/pagination";
+import { siteConfig } from "@/config";
 
 const { sizePerPage } = siteConfig;
 
@@ -39,8 +40,8 @@ export default function PagenationPage({
   return (
     <div>
       <div className="flex flex-col lg:flex-row-reverse lg:gap-10">
-        <TagList tags={tags} />
-        <PostList posts={posts} />
+        <TagsOfSide tags={tags} />
+        <PostSection posts={posts} />
       </div>
       <Pagination currentPage={currentPage} totalPages={totalPages} />
     </div>

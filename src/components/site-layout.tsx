@@ -1,11 +1,24 @@
+import { PropsWithChildren } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { siteConfig } from "@/config";
 
-export default function Header() {
+export default function SiteLayout({ children }: PropsWithChildren) {
   return (
-    <header className="fixed w-full top-0 bg-white bg-opacity-[0.9] border-b bd-default z-[1000]">
+    <>
+      <Header />
+      <main className="mx-auto container min-h-screen px-4 py-20 md:px-8">
+        {children}
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function Header() {
+  return (
+    <header className="fixed w-full top-0 bg-base-100 bg-opacity-[0.9]  z-[1000]">
       <div className="mx-auto container px-4 md:px-8 py-5 flex items-center justify-between ">
         <h1>
           <Link href={siteConfig.path.home} className="flex items-center">
@@ -36,5 +49,17 @@ export default function Header() {
         </nav>
       </div>
     </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <div className="flex justify-center items-center pt-4 pb-20 space-x-3">
+        <span className="text-mute text-xs">
+          {`© ${new Date().getFullYear()}`} {siteConfig.author.name}
+        </span>
+      </div>
+    </footer>
   );
 }

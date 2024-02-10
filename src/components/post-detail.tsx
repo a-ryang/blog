@@ -1,16 +1,15 @@
 "use client";
 
-import ViewCounter from "@/components/view-counter";
+import TagItem from "./tag-item";
+import ViewCounter from "./view-counter";
 
-import Tag from "./tag";
-
-interface PostDetailProps {
+type Props = {
   slug: string;
   datetime: string;
   tags: string[];
-}
+};
 
-export default function PostDetail({ slug, datetime, tags }: PostDetailProps) {
+export default function PostDetail({ slug, datetime, tags }: Props) {
   return (
     <div className="mt-2 space-x-2">
       <time dateTime={datetime} className="text-xs text-mute">
@@ -22,7 +21,7 @@ export default function PostDetail({ slug, datetime, tags }: PostDetailProps) {
       </span>
       {tags.length > 0 && <span className="text-xs text-mute">·</span>}
       {tags.map((tag) => (
-        <Tag title={tag} size="sm" key={tag} />
+        <TagItem title={tag} size="sm" key={tag} />
       ))}
     </div>
   );
