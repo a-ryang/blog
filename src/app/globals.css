@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    color: theme(colors.base.800);
+    color: theme(colors.neutral.900/0.85);
   }
 
   html,
@@ -17,35 +17,15 @@
 }
 
 @layer components {
-  .text-content {
-    color: theme(colors.base.800);
-  }
-
-  .text-ui {
-    color: theme(colors.base.700);
-  }
-
   .text-mute {
-    color: theme(colors.base.600);
+    color: theme(colors.neutral.900/0.5);
+  }
+
+  .text-disabled {
+    color: theme(colors.neutral.900/0.27);
   }
 
   .text-inverte {
     color: theme(colors.white/0.85);
-  }
-
-  .text-disabled {
-    color: theme(colors.base.500);
-  }
-
-  .bd-default {
-    border-color: theme(colors.base.300);
-  }
-
-  .bd-active {
-    border-color: theme(colors.base.400);
-  }
-
-  .bd-disabled {
-    border-color: theme(colors.base.200);
   }
 }
