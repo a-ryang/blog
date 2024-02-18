@@ -18,11 +18,9 @@ export default function PostItem({ post }: Props) {
 
   return (
     <article className="flex flex-col py-10 border-b border-base-300">
-      <header>
-        <h1 className="hover:underline text-xl font-bold overflow-hidden text-ellipsis line-clamp-2">
-          <Link href={href}>{title} </Link>
-        </h1>
-      </header>
+      <h1 className="hover:underline text-xl font-bold overflow-hidden text-ellipsis line-clamp-2">
+        <Link href={href}>{title} </Link>
+      </h1>
       {summary && <p className="mt-2 text-sm text-mute">{summary}</p>}
       <PostDetail slug={slugWithoutYear} datetime={datetime} tags={tags} />
     </article>
