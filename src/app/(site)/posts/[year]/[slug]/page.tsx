@@ -5,16 +5,22 @@ import { getPostBySlugWithYear } from "@/utils/post";
 
 import ViewCounter from "@/components/view-counter";
 
-import PostRenderer from "./_components/post-renderer";
-import Comment from "./_components/comment";
+import PostRenderer from "@/components/post-renderer";
+import PostComment from "@/components/post-comment";
 
 export async function generateMetadata({
-  params,
+  params: { year, slug },
 }: {
-  params: { slug: string };
+  params: { year: string; slug: string };
 }) {
+  const post = getPostBySlugWithYear(year, slug, ["title"]);
+
+  if (!post) {
+    return {};
+  }
+
   return {
-    title: params.slug,
+    title: post.frontMatter.title,
   };
 }
 
@@ -55,7 +61,7 @@ export default async function PostDetail({
           <PostRenderer post={realContent} />
         </div>
       </article>
-      <Comment />
+      <PostComment />
     </>
   );
 }
