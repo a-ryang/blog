@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import TagsOfSide from "@/components/tags-of-side";
-import PostSection from "@/components/post-section";
+import Posts from "@/components/posts";
 import Pagination from "@/components/pagination";
 
 import { getAllPost, getAllTags } from "@/utils/post";
@@ -51,16 +51,10 @@ export default function TagsPage({
     return notFound();
 
   return (
-    <div>
-      <div className="flex flex-col lg:flex-row-reverse lg:gap-10">
-        <TagsOfSide tags={tags} activeTag={tag} />
-        <PostSection posts={postsFoundByTag} />
-      </div>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        baseUrl={`${siteConfig.path.tags}/${encodedTag}`}
-      />
+    <div className="flex flex-col ">
+      <Posts posts={postsFoundByTag} />
+      <Pagination currentPage={1} totalPages={totalPages} />
+      <TagsOfSide tags={tags} activeTag={tag} className="order-first" />
     </div>
   );
 }

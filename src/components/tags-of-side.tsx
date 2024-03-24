@@ -9,16 +9,17 @@ import TagItem from "./tag-item";
 type Props = {
   tags: string[];
   activeTag?: string;
+  className?: string;
 };
 
-export default function TagsOfSide({ tags, activeTag }: Props) {
+export default function TagsOfSide({ tags, activeTag, className = "" }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const MAX_TAGS = 9;
 
   const displayedTags = isOpen ? tags : tags.slice(0, MAX_TAGS);
 
   return (
-    <aside className="w-full mt-10 lg:max-w-xs">
+    <aside className={`w-full mt-10 lg:max-w-xs ${className}`}>
       <h1 className="text-sm font-semibold">TAGS</h1>
 
       <ul className="flex flex-wrap gap-2 mt-2">

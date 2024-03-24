@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import Pagination from "@/components/pagination";
 import TagsOfSide from "@/components/tags-of-side";
-import PostSection from "@/components/post-section";
+import Posts from "@/components/posts";
 
 import { getAllPost, getAllTags } from "@/utils/post";
 import { siteConfig } from "@/config";
@@ -38,12 +38,10 @@ export default function PagenationPage({
   const posts = allPosts.slice(start, last);
 
   return (
-    <div>
-      <div className="flex flex-col lg:flex-row-reverse lg:gap-10">
-        <TagsOfSide tags={tags} />
-        <PostSection posts={posts} />
-      </div>
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+    <div className="flex flex-col ">
+      <Posts posts={posts} />
+      <Pagination currentPage={1} totalPages={totalPages} />
+      <TagsOfSide tags={tags} className="order-first" />
     </div>
   );
 }

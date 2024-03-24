@@ -8,7 +8,7 @@ export default function SiteLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Header />
-      <main className="mx-auto container min-h-screen px-4 py-20 md:px-8">
+      <main className="mx-auto min-h-screen max-w-3xl px-4 py-20">
         {children}
       </main>
       <Footer />
@@ -18,9 +18,9 @@ export default function SiteLayout({ children }: PropsWithChildren) {
 
 function Header() {
   return (
-    <header className="fixed w-full top-0 bg-base-100 bg-opacity-[0.9]  z-[1000]">
-      <div className="mx-auto container px-4 md:px-8 py-5 flex items-center justify-between ">
-        <h1>
+    <header className="fixed w-full top-0 bg-base-100 bg-opacity-[0.9] z-[1000]">
+      <div className="mx-auto max-w-3xl px-4 py-5 flex items-center justify-between ">
+        <div>
           <Link href={siteConfig.path.home} className="flex items-center">
             <Image
               alt="프로필 이미지"
@@ -31,22 +31,20 @@ function Header() {
             />
             <span className="ml-2 font-md">{siteConfig.author.name}</span>
           </Link>
-        </h1>
-        <nav>
-          <h1 className="hidden">블로그 네비게이션</h1>
-          <ul className="flex gap-2.5">
-            <li>
-              <Link href={siteConfig.path.home} className={"px-1 py-2 text-sm"}>
-                home
-              </Link>
-            </li>
-            <li>
-              <Link href={siteConfig.path.about} className="px-1 py-2 text-sm">
-                about
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        </div>
+
+        <ul className="flex gap-2.5">
+          <li>
+            <Link href={siteConfig.path.home} className={"px-1 py-2 text-sm"}>
+              home
+            </Link>
+          </li>
+          <li>
+            <Link href={siteConfig.path.about} className="px-1 py-2 text-sm">
+              about
+            </Link>
+          </li>
+        </ul>
       </div>
     </header>
   );
