@@ -30,6 +30,7 @@ module.exports = {
               color: theme("colors.gray.700"),
               paddingTop: theme("padding.1"),
               paddingBottom: theme("padding.1"),
+              paddingRight: theme("padding.2"),
               backgroundColor: theme("colors.gray.50"),
             },
             "code::before": { content: "none" },
