@@ -11,7 +11,7 @@ type Props = {
 
 export default function PostDetail({ slug, datetime, tags }: Props) {
   return (
-    <div className="mt-2 space-x-2">
+    <div className="mt-1 space-x-2">
       <time dateTime={datetime} className="text-xs text-mute">
         {datetime}
       </time>

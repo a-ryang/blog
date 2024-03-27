@@ -17,11 +17,13 @@ export default function PostItem({ post }: Props) {
   const slugWithoutYear = slug.split("/")[1];
 
   return (
-    <article className="flex flex-col py-10 border-b border-base-300">
-      <h1 className="hover:underline text-xl font-bold overflow-hidden text-ellipsis line-clamp-2">
-        <Link href={href}>{title} </Link>
-      </h1>
-      {summary && <p className="mt-2 text-sm text-mute">{summary}</p>}
+    <article className="flex flex-col py-4 border-b border-base-300">
+      <Link href={href}>
+        <h1 className="hover:underline font-medium overflow-hidden text-ellipsis line-clamp-2">
+          {title}
+        </h1>
+        {summary && <p className="text-sm text-mute">{summary}</p>}
+      </Link>
       <PostDetail slug={slugWithoutYear} datetime={datetime} tags={tags} />
     </article>
   );
